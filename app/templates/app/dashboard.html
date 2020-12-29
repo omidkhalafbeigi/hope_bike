@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="style/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/dash.css" />
+
+    <script src="js/jquery.js.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/dashj.js"></script>
+</head>
+
+<body class="container-fluid" id="body">
+    <div class="row" style="height: 100px;">
+        <div class="col-sm-4">
+            <a href="index.html" > <img src="img/home.png" id="homelink"/> </a>
+            <a href="cart.html" > <img src="img/cart.png" id="cart"/> </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="index.html"><img src="img/header.png" /></a>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3" id="menu">
+            <div class="row" id="profile" style="height: 170px;">
+                <img src="img/dashboard/prof.png"  style="height: 70; width: 300px; margin-left: 80px; margin-top: 50px;"/>
+            </div>
+            <div class="row" id="edit" style="height: 170px;">
+                <img src="img/dashboard/edit.png" style="height: 70; width: 150px; margin-left: 150px; margin-top: 50px;"/>
+            </div>
+            <div class="row" id="favorit" style="height: 170px;">
+                <img src="img/dashboard/fav.png" style="height: 70; width: 280px; margin-left: 90px; margin-top: 50px;"/>
+            </div>
+            <div class="row" id="orderhistory" style="height: 170px;">
+                <img src="img/dashboard/o_h.png" style="height: 90; width: 360px; margin-left: 65px; margin-top: 40px;"/>
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col" id="profinfo">
+                    <div class="row" style="margin-top: 30px;">
+                        <div class="col-sm-3">
+                            <p>First Name :</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Last Name :</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Age :</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Gender :</p>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 40px;">
+                        <div class="col-sm-3">
+                            <p>Telephone :</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Phone Number :</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>E-mail :</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Adress :</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="editinfo">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p>First Name : </p>
+                            <input type="text" id="fn" />
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Last Name : </p>
+                            <input type="text" id="ln" />
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Age</p>
+                            <input type="number" id="age" />
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Gender</p>
+                             <p><input type="checkbox" /> Male / Female <input type="checkbox" /> </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p>Telephone</p>
+                            <input type="tel" id="tn"/>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>Phone Number</p>
+                            <input type="tel" id="pn" />
+                        </div>
+                        <div class="col-sm-3">
+                            <p>E-mail</p>
+                            <input type="email" id="em"/>
+                        </div>
+                        <div class="col-sm-3">
+                            <p>adress</p>
+                            <input type="text" id="ad"/>
+                            <input type="submit" value="Submit" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="faveinfo">
+                    <h1>Empty</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" id="orderinfo">
+                    <h1>Empty</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

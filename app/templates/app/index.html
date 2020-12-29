@@ -1,0 +1,118 @@
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/Hstyle.css' %}" />
+
+    <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+    <script src="{% static 'js/jquery.js.js' %}"> </script>
+    <script src="{% static 'js/homej.js' %}"> </script>
+
+</head>
+
+<body id="body" class="container-fluid">
+    <div class="row" style="height: 100px;">
+        <div class="col-sm-4">
+          <a title='Contact' href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
+            <a title='Home' href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
+            <a title='Cart' href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" /></a>
+        </div>
+    </div>
+    <div style="margin-left:33%; text-align: center;" class="col-sm-4">
+            <p>{{ message }}</p>
+    </div>
+
+    
+    <div class="row">
+        <div class="col-sm-3">
+        <!--
+     
+
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-5">
+                    <img src="{% static 'img/home/New.png' %}" id="new" />
+                    <div class="st">
+                        <a href="#"> <img src="{% static 'img/stuff/bikes/green.png' %}" class="pic"/> </a>
+                        <p> price : 200$</p>
+                    </div>
+                    <div class="st">
+                        <a href="#"> <img src="{% static 'img/stuff/bikes/red.png' %}" class="pic" /> </a>
+                        <p> price : 200$</p>
+                    </div>
+                    <div class="st">
+                        <a href="#"> <img src="{% static 'img/stuff/bikes/aqua.png' %}" class="pic" /> </a>
+                        <p> price : 200$</p>
+                    </div>
+                    <div class="st">
+                        <a href="#"> <img src="{% static 'img/stuff/bikes/purple.png' %}" class="pic" /> </a>
+                        <p> price : 200$</p>
+                    </div>
+                </div>
+            </div>
+        -->
+        </div>
+
+        
+
+        <div class="col-sm-6">
+            <a href="{% url 'accessories' %}" title="Accessories" >
+                <img src="{% static 'img/home/accessries.png' %}" style="margin-left: 120px; margin-top: 80px;" />
+            </a>
+            <a href="{% url 'bikes' %}" title="Bikes" >
+                <img src="{% static 'img/home/bikes.png' %}" style="margin-top: 80px; margin-left: 5px;" />
+            </a>
+            <br />
+            <a href="{% url 'about' %}" title="About us">
+                <img src="{% static 'img/home/about.png' %}" style="margin-left: 120px; margin-top: 6px;" />
+            </a>
+            <a href="{% url 'sign' %}" title="Sign in/up">
+                <img src="{% static 'img/home/sign_in_up.png' %}" style="margin-top:7px; margin-left: 5px;" />
+            </a>
+        </div>
+
+        <!--
+        <div class="col-sm-3">
+            <div class="row">
+                <div class="col-sm-5">
+                    <img src="{% static 'img/home/popular.png' %}" id="pop"/>
+                    <div class="st" id="post">
+                        <a href="#"> <img src="{% static 'img/stuff/bikes/green.png' %}" class="pic"/> </a>
+                        <p> price : 200$</p>
+                    </div>
+                    <div class="st" id="post">
+                        <a href="#"> <img src="{% static 'img/stuff/bikes/red.png' %}" class="pic" /> </a>
+                        <p> price : 200$</p>
+                    </div>
+                    <div class="st" id="post">
+                        <a href="#"> <img src="{% static 'img/stuff/bikes/aqua.png' %}" class="pic" /> </a>
+                        <p> price : 200$</p>
+                    </div>
+                    <div class="st" id="post">
+                        <a href="#"> <img src="{% static 'img/stuff/bikes/purple.png' %}" class="pic" /> </a>
+                        <p> price : 200$</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+
+    </div>
+    <br/><br/>
+
+    <div style='margin: auto; width: 50%; '>
+        <a href="https://zula.ir/" > <img src="{% static 'img/Ads/ad1.jpeg' %}" /> </a>
+    </div>
+    
+
+</body>
+</html>

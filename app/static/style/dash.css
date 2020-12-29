@@ -1,0 +1,39 @@
+#body 
+{
+    background-color: rgb(187, 226, 231);
+}
+#homelink
+{
+    margin-top: 10px;
+    margin-left: 30px;
+}
+#menu
+{
+    background-color:  rgb(98, 208, 223);
+    height: 170px;
+}
+#profinfo
+{
+    background-color:  rgb(79, 180, 194);
+    height: 170px;
+}
+#editinfo
+{
+    background-color:  rgb(79, 180, 194);
+    height: 170px;
+}
+#faveinfo
+{
+    background-color:  rgb(79, 180, 194);
+    height: 170px;
+}
+#orderinfo
+{
+    background-color:  rgb(79, 180, 194);
+    height: 170px;
+}
+#cart
+{
+    margin-top: 13px;
+    margin-left: 30px;
+}

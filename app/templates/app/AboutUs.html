@@ -1,0 +1,42 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'style/About.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body class="container-fluid" id="body">
+    <div class="row" style="height: 100px;">
+        <div class="col-sm-4">
+            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
+            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
+            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" /></a>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <p style="margin-top: 30px; font-size: 19px;"> <b>Hope Bikes</b> is a store located in Qazvin , Iran.
+                <br/>We are in progress to obtain the best quality in services and bringing about the best goods for our costumers. </p>
+            <a href="https://www.google.com/maps/place/Saraye+Sa'd-o-Saltaneh/@36.268848,49.9984728,17z/data=!3m1!4b1!4m5!3m4!1s0x3ff3553c492eda4d:0x3026909421420526!8m2!3d36.268848!4d50.0006615">
+                <img src="{% static 'img/About/Screenshot (80).png' %}" id="map" title="click to open in map"/>
+            </a>
+            <br/>
+            <a href="#"> <img src="{% static 'img/About/instagram.png' %}" id="ins" title="Instagram"/> </a>
+            <a href="#"> <img src="{% static 'img/About/telegram.png' %}"  id="tele" title="Telegram"/> </a>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+
+</body>
+</html>

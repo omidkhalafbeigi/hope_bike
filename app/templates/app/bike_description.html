@@ -1,0 +1,75 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/product.css' %}" />
+
+    <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+    <script src="{% static 'js/jquery.js.js' %}"> </script>
+    <script src="{% static 'js/prd.js' %}"></script>
+</head>
+
+<body class="container-fluid" id="body">
+    <div class="row" style="height: 100px;">
+        <div class="col-sm-4">
+            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
+            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
+            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" /></a>
+        </div>
+        <br><br>
+        <div style="margin-left:33%; text-align: center;" class="col-sm-4">
+            <p>{{ message }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3"> </div>
+
+        <div class="col-sm-6">
+            <img src="{{ img1 }}" style="margin-top: 30px; margin-left: 30px;" id="main_pic"/>
+            <img src="{{ img2 }}" style="margin-top: 30px; margin-left: 30px;" id="main_pic1"/>
+            <img src="{{ img3 }}" style="margin-top: 30px; margin-left: 30px;" id="main_pic2"/>
+            <img src="{{ img4 }}" style="margin-top: 30px; margin-left: 30px;" id="main_pic3"/>
+            <img src="{{ img1 }}" style="margin-top: 30px; margin-left: 30px;" id="main_pic4"/>
+            <br/> <br/> <br/> <br/>
+            <img src="{{ img1 }}" style="width: 120px; height: 90px;" id="pic4"/>
+            <img src="{{ img2 }}" style="width: 120px; height: 90px; margin-left: 40px;" id="pic1"/>
+            <img src="{{ img3 }}" style="width: 120px; height: 90px; margin-left: 40px;" id="pic2"/>
+            <img src="{{ img4 }}" style="width: 120px; height: 90px; margin-left: 40px;" id="pic3"/>
+
+            <br/> <br/> <br/>
+            <div style="width: 200px; height: 80px; background-color: chartreuse; margin-left: 100px;">
+                <br/>
+                <a href="{% url 'add_bike_to_cart' slug=slug %}"><h2 style="font-family: Algerian; color: black;">Add to cart</h2></a>
+            </div>
+
+            <div class="row" style="background-color:  rgb(47, 103, 110); margin-top: 20px;">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="det">
+                    <h3>{{ title }}</h3>
+                    <br/>
+                    <h3>Brand: {{ brand }}</h3>
+                    <br/>
+                    <h3>Size: {{ size }}</h3>
+                    <br/>
+                    <h3>Price: {{ price }}R</h3>
+                    <br/>
+                    <h3>{{ description }}</h3>
+                    <br/>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-3"> </div>
+    </div>
+</body>
+</html>

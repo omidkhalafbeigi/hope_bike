@@ -1,0 +1,39 @@
+#body {
+    background-color: rgb(187, 226, 231);
+}
+#cart
+{
+    margin-top: 13px;
+    margin-left: 30px;
+}
+#header
+{
+    margin-left: 30px;
+}
+#homelink
+{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+#pro
+{
+    background-color: rgb(98, 208, 223);
+}
+#num
+{
+    background-color: rgb(85, 181, 194);
+}
+#unique
+{
+    background-color: rgb(98, 208, 223);
+}
+#sum
+{
+    background-color:rgb(85, 181, 194);
+}
+#pay
+{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: rgb(13, 17, 49);
+}

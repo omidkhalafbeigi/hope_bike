@@ -1,0 +1,58 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/Contact.css' %}" />
+
+    <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+</head>
+
+<body id="body" class="container-fluid">
+    <div>
+        <div class="row" style="height: 100px;">
+            <div class="col-sm-4">
+                <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
+                <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+            </div>
+            <div class="col-sm-4">
+                <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" id="header"/></a>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" id="Cform">
+              <form method="get" action="{% url 'send_ticket' %}">
+                <h3 style="margin-top: 30px;">Name</h3>
+                <input type="text" id="name" name="name" required/>
+                <br/>
+
+                <h3 style="margin-top: 30px;">E-mail</h3>
+                <input type="email" id="email" name="email" required/>
+                <br/>
+
+                <h3 style="margin-top: 30px;">Message</h3>
+                <textarea id="message" rows="7" name="ticket" required style="resize: none;"></textarea>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-8"></div>
+                    <div class="col-sm">
+                        <input type="submit" id="send" value="Send"/>
+                    </div>
+                </div>
+                <div class="row" style="height: 50px;"></div>
+              </form>
+            </div>
+
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</body>
+</html>

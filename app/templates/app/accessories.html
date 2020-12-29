@@ -1,0 +1,72 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bikes</title>
+    <link href="img/logo.png" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/bikes.css' %}" />
+
+    <script src="{% static 'js/jquery.js.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/product.js' %}"></script>
+</head>
+
+<body class="container-fluid" id="body">
+    <div class="row" style="height: 100px;">
+        <div class="col-sm-4">
+            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
+            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
+            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" /></a>
+            <br>
+            <p>{{ message }}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="background-color: rgb(85, 181, 194); height: 840px;">
+                  <form action="{% url 'accessories' %}" method="get">
+                    <h3 style="margin-left: 45px; margin-top: 50px;">Type</h3>
+                    <p style="margin-top: 20px;">  <input type="checkbox" name='helmet' />  Helmet </p>
+                    <p style="margin-top: 20px;">  <input type="checkbox" name='clothes' />  Clothes </p>
+                    <p style="margin-top: 20px;">  <input type="checkbox" name='flask' />  Flask </p>
+                    <p style="margin-top: 20px;">  <input type="checkbox" name='gloves' />  Gloves </p>
+                    <br>
+                    <input type="submit" name="" value="Filter">
+                  </form>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+
+        <div class="col-sm-8" id="list">
+
+            <div class="row" style="height: 50px;"> <br/> </div>
+            <div style="margin-right: 5%;" class="row" >
+
+                {% for accessory in accessories %}
+
+                <div class="col-sm-1"></div>
+                <div style="margin-top: 1%;"  class="col-sm-2" id="prd">
+                    <a href="{{ accessory.id }}/"> <img src="{{ accessory.img1.url }}" id="b"/></a>
+                    <p style="text-align: center;">{{ accessory.title }}</p>
+                </div>
+
+                {% endfor %}
+
+            </div>
+            <div class="row" style="height: 50px;"> <br/> </div>
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</body>
+</html>

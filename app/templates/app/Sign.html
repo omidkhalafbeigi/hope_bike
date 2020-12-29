@@ -1,0 +1,104 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in / up</title>
+    <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'style/Sstyle.css' %}" />
+
+    <script src="{% static 'js/bootstrap.min.js' %}"> </script>
+    <script src="{% static 'js/jquery.js.js' %}"> </script>
+    <script src="{% static 'js/signj.js' %}"> </script>
+</head>
+
+<body id="body" class="container-fluid" >
+    <div class="row" style="height: 100px;">
+        <div class="col-sm-4">
+            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
+            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
+            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+        </div>
+        <div class="col-sm-4">
+            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" /></a>
+            <p style="color:red; font-weight:bold; font-size:15;">{{ status }}</p>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <div style="margin-left:33%; text-align: center;" class="col-sm-4">
+            <p>{{ message }}</p>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2" style="background-color: rgb(98, 208, 223);" >
+        <input type="button" value="Sign up" id="su" style="margin-left: 70px; margin-top: 250px;" />
+        <input type="button" value="Sign in" id="si" style="margin-left: 70px; margin-top: 50px;" />
+        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+        </div>
+            <div class="col-sm-3" id="signup">
+                <form action="{% url 'sign' %}" method="post" id="signup_form">
+                    {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <p style="margin-top:20px;"> <b>First Name</b> </p>
+                        <input type="text" title="Fisrt Name" name="first_name" required/>
+
+                        <p style="margin-top:20px;"> <b>Last Name</b> </p>
+                        <input type="text" title="Last Name" name="last_name" required/>
+
+                        <p style="margin-top:20px;"> <b>E-mail</b> </p>
+                        <input type="email" title="Email" name="email" required/>
+
+                        <p style="margin-top:20px;"> <b>Phone Number</b> </p>
+                        <input type="text" title="Phone Number" name="phone" required/>
+
+                        <p style="margin-top:20px;"> <b>Password</b> </p>
+                        <input type="password" title="Password" name="password" required/>
+
+                        <p style="margin-top:20px;"> <b>Confirm Password</b> </p>
+                        <input type="password" title="Confirm Password" name="conf_password" required/>
+                        <br /> <br />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-9"></div>
+                    <div class="col-sm-2">
+                        <input type="submit" value="Submit" id="sub"/>
+                    </div>
+                </div>
+                </form>
+            </div>
+
+        <div class="col-sm-1"></div>
+            <div class="col-sm-3" id="signin">
+                <form id="signin_form" action="{% url 'sign' %}" method="post">
+                    {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8">
+                        <p style="margin-top:60px;"> <b>E-mail</b> </p>
+                        <input type="text" title="Email" name="email" required/>
+
+                        <p style="margin-top:20px;"> <b>Password</b> </p>
+                        <input type="password" title="Password" name="password" required/>
+                        <br /> <br />
+                        <a href="#" style="color: blueviolet;" >Forget your password ?</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-9"></div>
+                    <div class="col-sm-2">
+                        <br/>
+                        <input type="submit" value="Log in" id="sub"/>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
