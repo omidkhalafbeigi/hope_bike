@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
+    <title>محصول</title>
     <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'style/product.css' %}" />
@@ -17,12 +17,12 @@
 <body class="container-fluid" id="body">
     <div class="row" style="height: 100px;">
         <div class="col-sm-4">
-            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
-            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
-            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" style="width: 13%" /> </a>
+            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink" style="width: 13%" /> </a>
+            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart" style="width: 13%" /> </a>
         </div>
         <div class="col-sm-4">
-            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" /></a>
+            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" style="width: 95%" /></a>
         </div>
         <br><br>
         <div style="margin-left:33%; text-align: center;" class="col-sm-4">
@@ -48,21 +48,21 @@
             <br/> <br/> <br/>
             <div style="width: 200px; height: 80px; background-color: chartreuse; margin-left: 100px;">
                 <br/>
-                <a href="{% url 'add_bike_to_cart' slug=slug %}"><h2 style="font-family: Algerian; color: black;">Add to cart</h2></a>
+                <a href="{% url 'add_bike_to_cart' slug=slug %}"><h2 style="font-family: Algerian; color: black;">اضافه به سبد</h2></a>
             </div>
 
             <div class="row" style="background-color:  rgb(47, 103, 110); margin-top: 20px;">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8" id="det">
-                    <h3>{{ title }}</h3>
+                    <h3 dir="rtl">عنوان محصول: {{ title }}</h3>
                     <br/>
-                    <h3>Brand: {{ brand }}</h3>
+                    <h3 dir="rtl">برند: {{ brand }}</h3>
                     <br/>
-                    <h3>Size: {{ size }}</h3>
+                    <h3 dir="rtl">اندازه: {{ size }}</h3>
                     <br/>
-                    <h3>Price: {{ price }}R</h3>
+                    <h3 dir="rtl">قیمت: {{ price }}T</h3>
                     <br/>
-                    <h3>{{ description }}</h3>
+                    <h3 dir="rtl">توضیحات: {{ description }}</h3>
                     <br/>
                 </div>
                 <div class="col-sm-2"></div>

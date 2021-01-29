@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bikes</title>
+    <title>لوازم جانبی</title>
     <link href="img/logo.png" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'style/bikes.css' %}" />
@@ -34,13 +34,13 @@
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8" style="background-color: rgb(85, 181, 194); height: 840px;">
                   <form action="{% url 'accessories' %}" method="get">
-                    <h3 style="margin-left: 45px; margin-top: 50px;">Type</h3>
-                    <p style="margin-top: 20px;">  <input type="checkbox" name='helmet' />  Helmet </p>
-                    <p style="margin-top: 20px;">  <input type="checkbox" name='clothes' />  Clothes </p>
-                    <p style="margin-top: 20px;">  <input type="checkbox" name='flask' />  Flask </p>
-                    <p style="margin-top: 20px;">  <input type="checkbox" name='gloves' />  Gloves </p>
+                    <h3 style="margin-left: 45px; margin-top: 50px;">خانواده محصول</h3>
+                    <p style="margin-top: 20px;">  <input type="checkbox" name='type' value='helmet' />  کلاه ایمنی </p>
+                    <p style="margin-top: 20px;">  <input type="checkbox" name='type' value='clothes' />  لباس </p>
+                    <p style="margin-top: 20px;">  <input type="checkbox" name='type' value='flask' />  فلاسک </p>
+                    <p style="margin-top: 20px;">  <input type="checkbox" name='type' value='gloves' />  دستکش </p>
                     <br>
-                    <input type="submit" name="" value="Filter">
+                    <input type="submit" name="" value="فیلتر">
                   </form>
                 </div>
                 <div class="col-sm-2"></div>

@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>خانه</title>
     <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'style/Hstyle.css' %}" />
@@ -19,23 +19,23 @@
 <body id="body" class="container-fluid">
     <div class="row" style="height: 100px;">
         <div class="col-sm-4">
-          <a title='Contact' href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
-            <a title='Home' href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
-            <a title='Cart' href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+          <a title='Contact' href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" style="width: 13%" /> </a>
+            <a title='Home' href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink" style="width: 13%" /> </a>
+            <a title='Cart' href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart" style="width: 13%" /> </a>
         </div>
         <div class="col-sm-4">
-            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" /></a>
+            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" style="width: 95%" /></a>
         </div>
     </div>
     <div style="margin-left:33%; text-align: center;" class="col-sm-4">
             <p>{{ message }}</p>
     </div>
 
-    
+
     <div class="row">
         <div class="col-sm-3">
         <!--
-     
+
 
             <div class="row">
                 <div class="col-sm-3"></div>
@@ -62,22 +62,56 @@
         -->
         </div>
 
-        
+
 
         <div class="col-sm-6">
+
             <a href="{% url 'accessories' %}" title="Accessories" >
-                <img src="{% static 'img/home/accessries.png' %}" style="margin-left: 120px; margin-top: 80px;" />
+            <picture>
+                <!--
+                <source srcset="{% static 'img/home/accessries_2x.png' %}" media="(max-width: 768px) and (max-height: 1024px)">
+                <img src="{% static 'img/home/accessries_1x.png' %}" style="margin-left: 13%; margin-top: 80px; width: 40%" />
+                -->
+                <img src="{% static 'img/home/accessries.png' %}" style="margin-left: 13%; margin-top: 80px; width: 40%" />
+
+            </picture>
             </a>
+
             <a href="{% url 'bikes' %}" title="Bikes" >
-                <img src="{% static 'img/home/bikes.png' %}" style="margin-top: 80px; margin-left: 5px;" />
+            <picture>
+                <!--
+                <source srcset="{% static 'img/home/bikes_2x.png' %}" media="(max-width: 768px) and (max-height: 1024px)">
+                <img src="{% static 'img/home/bikes_1x.png' %}" style="margin-left: 1px; margin-top: 80px; width: 40%" />
+                -->
+                <img src="{% static 'img/home/bikes.png' %}" style="margin-left: 1px; margin-top: 80px; width: 40%" />
+
+            </picture>
             </a>
+
             <br />
+
             <a href="{% url 'about' %}" title="About us">
-                <img src="{% static 'img/home/about.png' %}" style="margin-left: 120px; margin-top: 6px;" />
+            <picture>
+                <!--
+                <source srcset="{% static 'img/home/about_2x.png' %}" media="(max-width: 768px) and (max-height: 1024px)">
+                <img src="{% static 'img/home/about_1x.png' %}" style="margin-left: 13%; margin-top: 4px; width: 40%" />
+                -->
+                <img src="{% static 'img/home/about.png' %}" style="margin-left: 13%; margin-top: 4px; width: 40%" />
+
+            </picture>
             </a>
+
             <a href="{% url 'sign' %}" title="Sign in/up">
-                <img src="{% static 'img/home/sign_in_up.png' %}" style="margin-top:7px; margin-left: 5px;" />
+            <picture>
+                <!--
+                <source srcset="{% static 'img/home/sign_in_up_2x.png' %}" media="(max-width: 768px) and (max-height: 1024px)">
+                <img src="{% static 'img/home/sign_in_up_1x.png' %}" style="margin-left: 1px; margin-top: 4px; width: 40%" />
+                -->
+                <img src="{% static 'img/home/sign_in_up.png' %}" style="margin-left: 1px; margin-top: 4px; width: 40%" />
+
+            </picture>
             </a>
+
         </div>
 
         <!--
@@ -109,10 +143,13 @@
     </div>
     <br/><br/>
 
+    <!--
+
     <div style='margin: auto; width: 50%; '>
         <a href="https://zula.ir/" > <img src="{% static 'img/Ads/ad1.jpeg' %}" /> </a>
     </div>
-    
+
+    -->
 
 </body>
 </html>

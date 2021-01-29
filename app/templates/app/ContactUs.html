@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>ارتباط با ما</title>
 
     <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
@@ -17,11 +17,11 @@
     <div>
         <div class="row" style="height: 100px;">
             <div class="col-sm-4">
-                <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
-                <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+                <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink" style="width: 13%" /> </a>
+                <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart" style="width: 13%" /> </a>
             </div>
             <div class="col-sm-4">
-                <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" id="header"/></a>
+                <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" id="header" style="width: 95%" /></a>
             </div>
             <div class="col-sm-4"></div>
         </div>
@@ -30,21 +30,21 @@
             <div class="col-sm-4"></div>
             <div class="col-sm-4" id="Cform">
               <form method="get" action="{% url 'send_ticket' %}">
-                <h3 style="margin-top: 30px;">Name</h3>
+                <h3 style="margin-top: 30px;">(انگلیسی) نام</h3>
                 <input type="text" id="name" name="name" required/>
                 <br/>
 
-                <h3 style="margin-top: 30px;">E-mail</h3>
+                <h3 style="margin-top: 30px;">ایمیل</h3>
                 <input type="email" id="email" name="email" required/>
                 <br/>
 
-                <h3 style="margin-top: 30px;">Message</h3>
-                <textarea id="message" rows="7" name="ticket" required style="resize: none;"></textarea>
+                <h3 style="margin-top: 30px;">متن پیام</h3>
+                <textarea dir="rtl" id="message" rows="7" name="ticket" required style="resize: none;"></textarea>
                 <br/>
                 <div class="row">
                     <div class="col-sm-8"></div>
                     <div class="col-sm">
-                        <input type="submit" id="send" value="Send"/>
+                        <input type="submit" id="send" value="ارسال"/>
                     </div>
                 </div>
                 <div class="row" style="height: 50px;"></div>
@@ -52,6 +52,12 @@
             </div>
 
             <div class="col-sm-4"></div>
+        </div>
+        <div>
+            <br/>
+            <p style="font-size: 22; margin-left: 30%;" dir="rtl">شماره تماس فروشگاه: 02833228620</p>
+            <p style="font-size: 22; margin-left: 30%;" dir="rtl">شماره همراه: 09102921624</p>
+            <p style="font-size: 22; margin-left: 30%;" dir="rtl">ساعات کاری: 10 صبح الی 1 ظهر - 4 ظهر الی 8 شب</p>
         </div>
     </div>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>سبد خرید</title>
     <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'style/Cart.css' %}" />
@@ -16,13 +16,14 @@
 <body class="container-fluid" id="body">
     <div class="row" style="height: 100px;">
         <div class="col-sm-4">
-            <a href="{% url 'exit' %}" > <img src="{% static 'img/exit.png' %}" id="cart"/> </a>
-            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
-            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
-            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+            <a href="{% url 'exit' %}" > <img src="{% static 'img/exit.png' %}" id="cart" style="width: 13%" /> </a>
+            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" style="width: 13%" /> </a>
+            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink" style="width: 13%" /> </a>
+            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart" style="width: 13%" /> </a>
         </div>
+
         <div class="col-sm-4">
-          <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" id="header" /></a>
+          <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" id="header" style="width: 95%" /></a>
         </div>
 
         <div style="margin-left:33%; text-align: center;" class="col-sm-4">
@@ -37,26 +38,26 @@
             <div class="row">
                     {% for cart in cart_bikes %}
                     <div class="col-sm-3" id="pro">
-                        <h3>Product</h3>
+                        <h3>محصول</h3>
                         <hr/>
                         <h6>{{ cart.bike.title }}</h6>
                         <hr/>
                         <br/> <br/>
                     </div>
                     <div class="col-sm-3" id="num">
-                        <h3>Number</h3>
+                        <h3>تعداد</h3>
                         <hr/>
                         <h4>{{ cart.number_products }}</h4>
                         <hr/>
                     </div>
                     <div class="col-sm-3" id="unique">
-                        <h4>UnitPrice</h4>
+                        <h4>قیمت واحد</h4>
                         <hr/>
                         <h4>{{ cart.bike.price }}</h4>
                         <hr/>
                     </div>
                     <div class="col-sm-3" id="sum">
-                        <h4>TotalPrice</h4>
+                        <h4>مجموع</h4>
                         <hr/>
                         <h4>{{ cart.bike.price|mul:cart.number_products }}</h4>
                         <hr/>
@@ -67,26 +68,26 @@
             <div class="row">
                     {% for cart in cart_accessories %}
                     <div class="col-sm-3" id="pro">
-                        <h3>Product</h3>
+                        <h3>محصول</h3>
                         <hr/>
                         <h6>{{ cart.accessories.title }}</h6>
                         <hr/>
                         <br/> <br/>
                     </div>
                     <div class="col-sm-3" id="num">
-                        <h3>Number</h3>
+                        <h3>تعداد</h3>
                         <hr/>
                         <h4>{{ cart.number_products }}</h4>
                         <hr/>
                     </div>
                     <div class="col-sm-3" id="unique">
-                        <h4>UnitPrice</h4>
+                        <h4>قیمت واحد</h4>
                         <hr/>
                         <h4>{{ cart.accessories.price }}</h4>
                         <hr/>
                     </div>
                     <div class="col-sm-3" id="sum">
-                        <h4>TotalPrice</h4>
+                        <h4>مجموع</h4>
                         <hr/>
                         <h4>{{ cart.accessories.price|mul:cart.number_products }}</h4>
                         <hr/>
@@ -100,8 +101,11 @@
     <div class="row">
         <div class="col-sm-4"></div>
         <div class="col-sm-4">
-            <h2>Final Fee: {{ final_fee }} </h2>
-            <input type="submit" value="Pay" id="pay"/>
+        <form method="post" action="{% url 'pay' final_fee=final_fee %}">
+            {% csrf_token %}
+            <h2 dir="rtl" style="font-family: 'B Nazanin';">قیمت نهایی: {{ final_fee }} تومان </h2>
+            <input type="submit" value="پرداخت" id="pay"/>
+        </form>
         </div>
         <div class="col-sm-4" style="margin-left:33%; text-align: center;">
             <form method="get" action="{% url 'cart' %}">
@@ -115,7 +119,7 @@
                 {% endfor %}
                 </select>
                 <br><br>
-                <input id="pay" type="submit" value="Remove">
+                <input id="remove" type="submit" value="حذف">
             </form>
         </div>
         <div class="col-sm-4"></div>

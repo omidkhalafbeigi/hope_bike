@@ -44,3 +44,4 @@ def about(request):
     response = render(request, template_name='app/AboutUs.html', context={'message': message})
 
     return response
+

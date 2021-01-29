@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, reverse, HttpResponseRedirect
 from django.template import Template, Context
 from .models import *
+from zeep import Client
 
 
 def sign_checker(cookies):
@@ -100,7 +101,18 @@ def sign(request):
 def bikes(request):
     is_logged, message = sign_checker(request.COOKIES)
     bikes = Bike.objects.all()
-    return render(request, template_name='app/bikes.html', context={'bikes': bikes, 'message': message})
+    if len(request.GET) > 0:
+        if 'size' in request.GET and 'brand' in request.GET:
+            bikes = Bike.objects.filter(size=request.GET['size'], brand=request.GET['brand'])
+        elif 'size' in request.GET:
+            bikes = Bike.objects.filter(size=request.GET['size'])
+        else:
+            bikes = Bike.objects.filter(brand=request.GET['brand'])
+
+
+    response = render(request, template_name='app/bikes.html', context={'bikes': bikes, 'message': message})
+
+    return response
 
 
 def bike_desc(request, slug):
@@ -234,6 +246,9 @@ def accessories(request):
     cookies = request.COOKIES
     is_logged, message = sign_checker(cookies)
 
+    if len(request.GET) > 0:
+        accessories = Accessories.objects.filter(type=request.GET['type'])
+
     response = render(request, template_name='app/accessories.html', context={'accessories': accessories, 'message': message})
 
     return response
@@ -291,3 +306,53 @@ def add_accessories_to_cart(request, slug):
         resp = HttpResponseRedirect(reverse('sign'))
 
     return resp
+
+
+amount = None
+
+def pay(request, final_fee):
+
+    MERCHANT_ID = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
+    global amount
+    amount = final_fee
+    description = 'Desc'
+
+    email = request.COOKIES['user_cookie'].split('-')[0]
+    mobile = '1234567890'
+    callback = 'http://website.com/verify/'
+
+    client = Client('https://www.zarinpal.com/pg/services/WebGate/wsdl')
+    result = client.service.PaymentRequest(MERCHANT_ID, amount, description, email, mobile, callback)
+
+    if result.Status == 100:
+        return HttpResponseRedirect(f'https://www.zarinpal.com/pg/StartPay/{result.Authority}')
+    else:
+        return HttpResponse(f'Error: {result.Authority}')
+
+
+def verify(request):
+
+    MERCHANT_ID = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
+    client = Client('https://www.zarinpal.com/pg/services/WebGate/wsdl')
+    result_msg = None
+    if request.GET.get('Status') == 'OK':
+        result = client.service.PaymentVerification(MERCHANT_ID, request.GET['Authority'], amount)
+
+        if result.Status == 100:
+            Cart_Bike.objects.filter(user_id=request.COOKIES['user_cookie'].split('-')[0]).delete()
+            Cart_Accessories.objects.filter(user_id=request.COOKIES['user_cookie'].split('-')[0]).delete()
+
+            result_msg = 'خرید شما با موفقیت انجام شد. لطفا به صفحه اصلی بازگردید.'
+
+        elif result.Status == 101:
+            result_msg = 'درخواست شما ارسال شد'
+
+        else:
+            result_msg = f'خرید شما با خطا مواجه شد - Code: {result.Status}'
+
+    else:
+        result_msg = 'خرید توسط شما و یا سیستم لغو شد'
+
+
+    return render(request, template_name='app/pay_result.html', context={'result': result_msg})
+

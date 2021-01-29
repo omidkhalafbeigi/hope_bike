@@ -1,10 +1,10 @@
 {% load static %}
 
-<html lang="en">
+<html lang='en'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>درباره ما</title></title></title>
     <link href="{% static 'img/logo.png' %}" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'style/About.css' %}" />
     <link rel="stylesheet" href="{% static 'style/bootstrap.min.css' %}" />
@@ -14,22 +14,24 @@
 <body class="container-fluid" id="body">
     <div class="row" style="height: 100px;">
         <div class="col-sm-4">
-            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" /> </a>
-            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink"/> </a>
-            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart"/> </a>
+            <a href="{% url 'contact' %}"> <img src="{% static 'img/contact.png' %}" id="contact" style="width: 13%" /> </a>
+            <a href="{% url 'index' %}" > <img src="{% static 'img/home.png' %}" id="homelink" style="width: 13%" /> </a>
+            <a href="{% url 'cart' %}" > <img src="{% static 'img/cart.png' %}" id="cart" style="width: 13%" /> </a>
         </div>
         <div class="col-sm-4">
-            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" /></a>
+            <a href="{% url 'index' %}"><img src="{% static 'img/header.png' %}" style="width: 95%" /></a>
         </div>
         <div class="col-sm-4"></div>
     </div>
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
-            <p style="margin-top: 30px; font-size: 19px;"> <b>Hope Bikes</b> is a store located in Qazvin , Iran.
-                <br/>We are in progress to obtain the best quality in services and bringing about the best goods for our costumers. </p>
-            <a href="https://www.google.com/maps/place/Saraye+Sa'd-o-Saltaneh/@36.268848,49.9984728,17z/data=!3m1!4b1!4m5!3m4!1s0x3ff3553c492eda4d:0x3026909421420526!8m2!3d36.268848!4d50.0006615">
-                <img src="{% static 'img/About/Screenshot (80).png' %}" id="map" title="click to open in map"/>
+            <p dir="rtl" style="margin-top: 30px; font-size: 19px; font-family: B Nazanin;"> <b>Hope Bikes</b> یک فروشگاه دوچرخه و لوازم جانبی واقع در استان قزوین است.
+                <br/>ما تمام سعی خود را میکنیم تا بهترین خدمات را به مشتریان خود ارائه دهیم.
+                <br/> شما عزیزان میتوانید از طریق آدرس فروشگاه ما که در تصویر زیر مشخص شده است, به صورت حضوری نیز محصولات خود را تهیه کنید.
+                </p>
+                <a href="https://www.google.com/maps/place/Saraye+Sa'd-o-Saltaneh/@36.268848,49.9984728,17z/data=!3m1!4b1!4m5!3m4!1s0x3ff3553c492eda4d:0x3026909421420526!8m2!3d36.268848!4d50.0006615">
+                <img style="width: 90%;" src="{% static 'img/About/Screenshot (80).png' %}" id="map" title="click to open in map"/>
             </a>
             <br/>
             <a href="#"> <img src="{% static 'img/About/instagram.png' %}" id="ins" title="Instagram"/> </a>

@@ -13,6 +13,8 @@ urlpatterns = [
     path('bikes/', include('app.url_bikes')),
     path('about/', views.about, name='about'),
     path('contact/', include('app.url_contact')),
+    path('pay/', include('app.url_pay')),
+    path('verify/', include('app.url_verify')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
